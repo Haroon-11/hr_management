@@ -1,7 +1,7 @@
 <div class="col-lg-12">
   <%= flash[:notice] %>
-
-  <div class="card mt-5 mb-3 rounded-0">
+  <% if hr_signed_in? %>
+    <div class="card mt-5 mb-3 rounded-0">
     <div class="card-body">
       <h2 class="text-center">Listing Employees</h2>
     </div>
@@ -38,4 +38,8 @@
       <% end %>
     </tbody>
   </table>
+  <% else %>
+    <%= render 'shared/links' %>
+  <% end %>
+  
 </div>

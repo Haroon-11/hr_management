@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :hrs
     #get 'home/index'
-  root 'home#index'
+  #root 'home#index'
+  root 'employees#index'
 
   resources :employees
   resources :documents
