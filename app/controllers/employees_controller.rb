@@ -6,6 +6,7 @@ class EmployeesController < ApplicationController
         @employee = Employee.new   
     end
     def create
+        debugger
         @employee = Employee.new(employee_params)
         if @employee.save 
             redirect_to employees_path, notice: "Employee has been created successfully."
@@ -43,6 +44,6 @@ class EmployeesController < ApplicationController
     private
 
     def employee_params
-        params.require(:employee).permit(:first_name , :last_name, :email, :phone_num, :address,  :country, :pincode)
+        params.require(:employee).permit(:first_name , :last_name ,:email, :phone_num, :address,  :country, :pincode , :profile_picture)
     end
 end
